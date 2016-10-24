@@ -1,7 +1,9 @@
 FROM python:2.7-slim
 MAINTAINER Stephen Price <stephen@stp5.net>
 
-RUN apt-get update && apt-get install -y build-essential
+RUN apt-get update \
+  && apt-get install -y build-essential \
+  && rm -rf /var/lib/apt/lists/*
 
 VOLUME /wheels
 VOLUME /src
