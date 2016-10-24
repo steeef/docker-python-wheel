@@ -6,6 +6,6 @@ Assuming a wheels directory of `./wheels`, run:
 
 ```
 docker build -t docker-python-wheel
-docker run -d -v wheels:/wheels docker-python-wheel \
+docker run -d -v $PWD/wheels:/wheels docker-python-wheel \
   <python_package>==<version>...
 ```
