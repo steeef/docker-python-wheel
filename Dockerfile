@@ -6,6 +6,4 @@ RUN apt-get update \
   && rm -rf /var/lib/apt/lists/*
 
 VOLUME /wheels
-VOLUME /src
-WORKDIR /src
-ENTRYPOINT ["/usr/bin/pip", "--wheels-dir=/wheels", "-r", "requirements.txt"]
+ENTRYPOINT ["pip", "wheel", "--wheel-dir=/wheels"]

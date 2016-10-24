@@ -2,10 +2,10 @@
 Use Docker to assist in building wheel files to be used with Python pip
 
 ## Instructions
-Assuming a wheels directory of `./wheels` and the path to your
-requirements.txt file is `./src`, run:
+Assuming a wheels directory of `./wheels`, run:
 
 ```
 docker build -t docker-python-wheel
-docker run -d -v ./wheels:/wheels ./src:/src docker-python-wheel
+docker run -d -v wheels:/wheels docker-python-wheel \
+  <python_package>==<version>...
 ```
